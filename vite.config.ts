@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    chunkSizeWarningLimit: 4096, // <-- higher limit: 4 MB
   },
   plugins: [react(), expressPlugin()],
   resolve: {
@@ -37,3 +38,4 @@ function expressPlugin(): Plugin {
     },
   };
 }
+
